@@ -1,0 +1,21 @@
+#N canvas 1 56 450 300 10;
+#X text 94 36 this is an example help file;
+#N canvas 347 176 494 344 META 0;
+#X text 12 105 HELP_PATCH_AUTHORS "pd meta" information added by Jonathan
+Wilkes for Pd version 0.42.;
+#X text 12 25 LICENSE GPL v2;
+#X text 12 85 AUTHOR Hans Christoph Steiner;
+#X text 12 5 KEYWORDS control;
+#X text 12 45 DESCRIPTION example libdir object class;
+#X text 12 65 INLET_0 float rats;
+#X restore 370 250 pd META;
+#X obj 121 123 haversine;
+#X obj 116 86 unpack f f f f;
+#X msg 113 55 36.12 -86.67 33.94 -118.4;
+#X obj 120 154 print;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 3 1 2 1;
+#X connect 3 2 2 2;
+#X connect 3 3 2 3;
+#X connect 4 0 3 0;
