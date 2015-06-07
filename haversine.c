@@ -23,7 +23,6 @@ typedef struct haversine
     number.) */
 void haversine_float(t_haversine *x, t_floatarg f)
 {
-    post("haversine: %f", f);
     double th1, ph1, th2, ph2;
     th1 = f;
     ph1 = x->ph1;
@@ -47,7 +46,7 @@ t_class *haversine_class;
 void *haversine_new(void)
 {
     t_haversine *x = (t_haversine *)pd_new(haversine_class);
-    post("haversine_new");
+    post("Haversine Formula, with code from http://rosettacode.org/wiki/Haversine_formula");
     x->th1 = x->th2 = x->ph1 = x->ph2 = 0;
     floatinlet_new(&x->x_obj, &x->ph1);
     floatinlet_new(&x->x_obj, &x->th2);
@@ -59,7 +58,6 @@ void *haversine_new(void)
     /* this is called once at setup time, when this code is loaded into Pd. */
 void haversine_setup(void)
 {
-    post("haversine_setup");
     haversine_class = class_new(gensym("haversine"), (t_newmethod)haversine_new, 0,
     	sizeof(t_haversine), 0, 0);
     class_addfloat(haversine_class, haversine_float);
